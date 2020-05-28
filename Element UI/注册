@@ -1,88 +1,68 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <!-- import CSS -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"
-    />
-
-    <style>
-      h2 {
-        font-size: 30px;
-      }
-    </style>
-
-  </head>
-  <body>
-    <el-form ref="form" :model="form" label-width="80px">
-      <el-form-item label="用户名">
-        <el-input v-model="user.username" placeholder="请输入用户名"></el-input>
-      </el-form-item>
-      <el-form-item label="邮箱">
-        <el-input v-model="user.username" placeholder="请输入邮箱"></el-input>
-      </el-form-item>
-      <el-form-item label="生日">
-        <el-col :span="11">
-          <el-time-picker placeholder="选择时间" v-model="form.date2" style="width: 100%;"></el-time-picker>
-        </el-col>
-      </el-form-item>
-      <el-form-item label="城市">
-        <el-select v-model="form.region" placeholder="上海">
-          <el-option label="上海" value="shanghai"></el-option>
-          <el-option label="北京" value="beijing"></el-option>
-          <el-option label="南京" value="beijing"></el-option>
-          <el-option label="深圳" value="beijing"></el-option>
-          <el-option label="杭州" value="beijing"></el-option>
-        </el-select>
-      </el-form-item>
-      <el-form-item label="即时配送">
-        <el-switch v-model="form.delivery"></el-switch>
-      </el-form-item>
-  
-      <el-form-item label="性别">
-        <el-radio-group v-model="form.resource">
-          <el-radio label="男"></el-radio>
-          <el-radio label="女"></el-radio>
-        </el-radio-group>
-      </el-form-item>
-      <el-form-item label="爱好">
-        <el-checkbox-group v-model="form.type">
-          <el-checkbox label="足球" name="type"></el-checkbox>
-          <el-checkbox label="篮球" name="type"></el-checkbox>
-          <el-checkbox label="网球" name="type"></el-checkbox>
-          <el-checkbox label="乒乓球" name="type"></el-checkbox>
-        </el-checkbox-group>
-      </el-form-item>
-      <el-form-item>
-        <el-button type="primary" @click="onSubmit">注册</el-button>
-        <el-button>取消</el-button>
-      </el-form-item>
-    </el-form>
-    <script>
-      export default {
-        data() {
-          return {
-            form: {
-              name: '',
-              region: '',
-              date1: '',
-              date2: '',
-              delivery: false,
-              type: [],
-              resource: '',
-              desc: ''
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+</head>
+<body>
+   <el-container id="box"style="width:30%;height:800px">
+       <el-main>
+           <el-form v-model="user">
+               <el-form-item label="用户名">
+                   <el-input v-model="user.userName"placeholder="请输入用户名"></el-input>
+               </el-form-item>
+               <el-form-item label="邮箱">
+                   <el-input v-model="user.userName"placeholder="请输入邮箱"></el-input>
+               </el-form-item>
+               <el-form-item label="性别">
+                    <el-radio v-model="user.radio" label="boy">男</el-radio>
+                   <el-radio v-model="user.radio" label="gril">女</el-radio>
+               </el-form-item>
+               <el-form-item label="所在城市">
+                   <el-select v-model="user.sity">
+                       <el-option label="北京"></el-option>
+                       <el-option label="上海"></el-option>
+                       <el-option label="南京" value="beijing"></el-option>
+                       <el-option label="深圳" value="beijing"></el-option>
+                       <el-option label="杭州" value="beijing"></el-option>
+                   </el-select>
+               </el-form-item>
+               <el-form-item label="生日">
+                   <el-date-picker v-model="user.date">
+                   </el-date-picker>
+               </el-form-item>
+               <el-form-item label="爱好">
+                <el-checkbox label="足球" name="type"></el-checkbox>
+                <el-checkbox label="篮球" name="type"></el-checkbox>
+                <el-checkbox label="网球" name="type"></el-checkbox>
+                <el-checkbox label="乒乓球" name="type"></el-checkbox>
+               </el-form-item>
+               
+                   <el-col >
+                       <el-button type="primary">注册</el-button>
+                       <el-button>取消</el-button>
+                   </el-col>
+               
+           </el-form>
+       </el-main>
+   </el-container>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+    const zhuce = new Vue({
+        el: '#box',
+        data: {
+            user: {
+                userName: "",
+                email: "",
+                radio:1,
+                sity:"",
+                date:"",
+                hobby:""
             }
-          }
-        },
-        methods: {
-          onSubmit() {
-            console.log('submit!');
-          }
         }
-      }
-    </script>
-  
-
+    })
+</script>
 </html>
