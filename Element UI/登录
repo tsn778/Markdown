@@ -41,8 +41,9 @@
                             </el-form-item>
                         </el-form>
                     </el-card>
+                    </el-col>
             </el-row>
-            </el-col>
+            
         </el-main>
     </el-container>
 </body>
@@ -57,7 +58,7 @@
         data: {
             user: {
                 username: "",
-                password: "",
+                password: ""
             },
         },
     });
