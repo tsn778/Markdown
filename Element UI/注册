@@ -21,11 +21,11 @@
                </el-form-item>
                <el-form-item label="所在城市">
                    <el-select v-model="user.sity">
-                       <el-option label="北京"></el-option>
-                       <el-option label="上海"></el-option>
-                       <el-option label="南京" value="beijing"></el-option>
-                       <el-option label="深圳" value="beijing"></el-option>
-                       <el-option label="杭州" value="beijing"></el-option>
+                       <el-option label="北京" value="beijing"></el-option>
+                       <el-option label="上海" value="shanghai"></el-option>
+                       <el-option label="南京" value="nanjing"></el-option>
+                       <el-option label="深圳" value="shenzhen"></el-option>
+                       <el-option label="杭州" value="hangzhou"></el-option>
                    </el-select>
                </el-form-item>
                <el-form-item label="生日">
